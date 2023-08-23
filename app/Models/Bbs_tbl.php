@@ -119,7 +119,7 @@ class Bbs_tbl extends Model
     }
 
     public function createBbs( $posts ){
-        //1
+        //11222
         DB::beginTransaction();
         try {
 
