@@ -14,6 +14,17 @@
 
     }
 
+    function changeBbs( formId ){
+        var form = $("#"+formId);
+
+        if( form.find("input[name=swalBool]").val() != 'true' ){
+            var swalMsg = <?= json_encode(config('site.swal.check'))?>;
+            var swaltitle = swalMsg[form.attr('tType')];
+            swalYesOrNo( swaltitle, form.attr('id') );
+            return false;
+        }
+    }
+
 </script>
 @endpush
 
@@ -126,11 +137,14 @@
                         </td>
                         <td class="mDisplay">{{ $val->created_at->toDateString() }}</td>
                         <td class="admin">
-                            <select name="" id="" onchange="if (confirm('상태값을 변경 하시겠습니까?')){ document.location.href = `{{ route('bbs.change', ['bbs_name' => $bbs_name, 'sid' => $val->sid]) }}?status=${$(this).val()}`; }">
-                                @foreach( config('site.bbs_param.status') as $pkey => $pval )
-                                <option value="{{ $pkey }}" {{ $val->status == $pkey ? 'selected' : '' }}>{{ $pval }}</option>
-                                @endforeach
-                            </select>
+                            <form id="chnage-form-{{$val->sid}}" name="chnage-form-{{$val->sid}}" action="{{ route('bbs.change', ['bbs_name' => $bbs_name, 'sid' => $val->sid]) }}" method="get" tType="U">
+                                <input type="hidden" name="swalBool" value="false">    
+                                <select name="status" id="status" onchange="changeBbs( 'chnage-form-{{$val->sid}}' );">
+                                    @foreach( config('site.bbs_param.status') as $pkey => $pval )
+                                    <option value="{{ $pkey }}" {{ $val->status == $pkey ? 'selected' : '' }}>{{ $pval }}</option>
+                                    @endforeach
+                                </select>
+                            </form>
                         </td>
                         <td class="mDisplay">{{ $val->read_count }}</td>
                         @if( Auth::check() )

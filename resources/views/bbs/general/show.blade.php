@@ -1,4 +1,22 @@
 @extends('layouts.app')
+
+@push('scripts')
+<script>
+    function delBbs(){
+
+        if( $("input[name=swalBool]").val() != 'true' ){
+            var form = $("#delete-form");
+            var swalMsg = <?= json_encode(config('site.swal.check'))?>;
+            var swaltitle = swalMsg[form.attr('tType')];
+            swalYesOrNo( swaltitle, form.attr('id') );
+            return false;
+        } 
+
+    }
+
+</script>
+@endpush
+
 @section('content')
     <div class="bbsView">
         <dl class="bbsBrief">
@@ -31,9 +49,13 @@
 
         <div class="bbsUtil btn">
             @if( Auth::check() )
-                <a href="{{ route('bbs.edit', ['bbs_name' => $bbs_name, 'sid' => $bbsTbl->sid]) }}" class="modify">수정</a>
-                <a href="{{ route('bbs.destroy', ['bbs_name' => $bbs_name, 'sid' => $bbsTbl->sid]) }}" class="delete"
-                   onclick="event.preventDefault();if (confirm('정말 글을 삭제하시겠습니까?')) {document.location.href = this.href;}">삭제</a>
+
+            <form id="delete-form" name="delete-form" action="{{ route('bbs.destroy', ['bbs_name' => $bbs_name, 'sid' => $bbsTbl->sid]) }}" method="get" tType="D">
+                <input type="hidden" name="swalBool" value="false">
+            </form>
+
+            <a href="{{ route('bbs.edit', ['bbs_name' => $bbs_name, 'sid' => $bbsTbl->sid]) }}" class="modify">수정</a>
+            <a href="javascript:void(0);" class="delete" onclick="delBbs();">삭제</a>
             @endif
             <a href="{{ route('bbs.list', ['bbs_name' => $bbs_name]) }}" class="list">목록</a>
         </div>

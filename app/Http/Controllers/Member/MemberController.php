@@ -52,16 +52,15 @@ class MemberController extends Controller
             Alert::alert( Auth::user()->name.'님 환영합니다.' );
             
             return redirect()
-                    ->intended();
+                ->intended();
         } else {
 
             // 데이터 임시 저장
             $request->flash();
             $request->flashOnly($request->input('member_id'));
 
-            return back()->with([
-                'alert' => '일치하는 정보가 없습니다.'
-            ]);
+            Alert::error('실패', '일치하는 정보가 없습니다.');
+            return back();
         }
 
     }

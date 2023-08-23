@@ -119,7 +119,7 @@ class Bbs_tbl extends Model
     }
 
     public function createBbs( $posts ){
-        //1
+        //11222
         DB::beginTransaction();
         try {
 
@@ -212,30 +212,30 @@ class Bbs_tbl extends Model
 
             $bbs_tbl->save();
 
-            $bbs_tbl->update([
-                'bbs_name'              => $posts['bbs_name']
-                , 'user_id'             => $posts['user_id']
-                , 'name'                => $posts['name']
-                // , 'email'               => $request->cookie('email') ?? null
-                , 'title'               => $posts['title']
-                , 'is_notice'           => $posts['is_notice'] ?? 'N'
-                , 'is_push'             => $posts['is_push'] ?? 'N'
-                , 'status'              => $posts['status']
-                , 'link_url'            => $posts['link_url']
-                , 'content'             => $posts['content']
-                , 'is_pop'              => $posts['is_pop']
-                , 'template'            => $posts['template']
-                , 'pop_content_type'    => $posts['pop_content_type']
-                , 'pop_size_w'          => $posts['pop_size_w']
-                , 'pop_size_h'          => $posts['pop_size_h'] 
-                , 'pop_size_y'          => $posts['pop_size_y'] 
-                , 'pop_size_x'          => $posts['pop_size_x'] 
-                , 'pop_detail'          => $posts['pop_detail'] 
-                , 'pop_resize'          => $posts['pop_resize'] 
-                , 'pop_sdate'           => $posts['pop_sdate'] ?? null
-                , 'pop_edate'           => $posts['pop_edate'] ?? null
-                , 'pop_content'         => $posts['pop_content'] ?? null
-            ]);
+            // $bbs_tbl->update([
+            //     'bbs_name'              => $posts['bbs_name']
+            //     , 'user_id'             => $posts['user_id']
+            //     , 'name'                => $posts['name']
+            //     // , 'email'               => $request->cookie('email') ?? null
+            //     , 'title'               => $posts['title']
+            //     , 'is_notice'           => $posts['is_notice'] ?? 'N'
+            //     , 'is_push'             => $posts['is_push'] ?? 'N'
+            //     , 'status'              => $posts['status']
+            //     , 'link_url'            => $posts['link_url']
+            //     , 'content'             => $posts['content']
+            //     , 'is_pop'              => $posts['is_pop']
+            //     , 'template'            => $posts['template']
+            //     , 'pop_content_type'    => $posts['pop_content_type']
+            //     , 'pop_size_w'          => $posts['pop_size_w']
+            //     , 'pop_size_h'          => $posts['pop_size_h'] 
+            //     , 'pop_size_y'          => $posts['pop_size_y'] 
+            //     , 'pop_size_x'          => $posts['pop_size_x'] 
+            //     , 'pop_detail'          => $posts['pop_detail'] 
+            //     , 'pop_resize'          => $posts['pop_resize'] 
+            //     , 'pop_sdate'           => $posts['pop_sdate'] ?? null
+            //     , 'pop_edate'           => $posts['pop_edate'] ?? null
+            //     , 'pop_content'         => $posts['pop_content'] ?? null
+            // ]);
     
             $delete_files = $posts['delete_files'] ?? null;
             if (is_array($delete_files) && !empty($delete_files)) {
