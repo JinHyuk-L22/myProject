@@ -1,0 +1,9 @@
+{
+    "/js/app.js": "/js/app.js"
+
+    , "/script/user.js" : "/script/user.js"
+
+    , "/css/app.css": "/css/app.css"
+    , "/css/common_v3.css" : "/css/common_v3.css"
+    , "/css/kovasc.css" : "/css/kovasc.css"
+}
