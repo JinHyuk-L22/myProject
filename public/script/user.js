@@ -1170,10 +1170,10 @@ function swalYesOrNo( swaltitle, formId ){
 		cancelButtonText: `아니오`,
 	}).then((result) => {
 			if( result.isConfirmed ){
-				$("input[name=swalBool]").val('true');
+				$("#"+formId).find("input[name=swalBool]").val('true');
 				$("#"+formId).submit();
 			} else {
-				$("input[name=swalBool]").val('false');
+				$("#"+formId).find("input[name=swalBool]").val('false');
 			}
 	});
 
