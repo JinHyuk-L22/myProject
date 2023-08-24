@@ -6,4 +6,5 @@
     , "/css/app.css": "/css/app.css"
     , "/css/common_v3.css" : "/css/common_v3.css"
     , "/css/kovasc.css" : "/css/kovasc.css"
+    , "/css/join.css" : "/css/join.css"
 }

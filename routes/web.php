@@ -29,6 +29,8 @@ Route::prefix('member')->group(function () {
     Route::post('login' ,[MemberController::class, 'login'] )->name('member.login');
 
     Route::post('logout',[MemberController::class, 'logout'])->name('member.logout');
+
+    Route::get('join'  ,[MemberController::class, 'joinView'] )->name('member.join');
     // Route::get('admin', 'App\Http\Controllers\MemberController@adminList')->name('member.admin');
     // Route::post('create', 'App\Http\Controllers\MemberController@createMember')->name('member.create');
     // Route::post('update', 'App\Http\Controllers\MemberController@updateMember')->name('member.update');

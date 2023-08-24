@@ -58,7 +58,12 @@
                         <dt><label for="">PW</label></dt>
                         <dd><input type="password" name="password" id="password"></dd>
                     </dl>
-                    <div class="btn"><input type="submit" name="" id="" value="LOGIN"></div>
+                    <div class="btn">
+                        <input type="submit" name="" id="" value="LOGIN">
+                    </div>
+                    <div class="btn">
+                        <input type="button" name="" id="" value="JOIN" onclick="location.href='{{route('member.join')}}'">
+                    </div>
                 </fieldset>
             </form>
         </div>

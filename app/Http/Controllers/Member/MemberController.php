@@ -36,6 +36,11 @@ class MemberController extends Controller
         return view('member.index');
     }
 
+    public function joinView()
+    {
+        return view('member.join');
+    }
+
     // 사용자가 생성한 리퀘스트 조건?
     public function login(LoginPostRequest $request)
     {

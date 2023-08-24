@@ -1130,6 +1130,7 @@ div.login dl input[type=text],
 div.login dl input[type=password] {color: #555;border: 0 none;box-sizing: border-box; }
 
 div.login div.btn input[type=submit] {width: 364px; height: 69px; border: 0;color: #fff;background-color: #444;font-weight: bold;border-radius: 0;}
+div.login div.btn input[type=button] {width: 364px; height: 69px; border: 0;color: #fff;background-color: #444;font-weight: bold;border-radius: 0;}
 
 .fcBlue{color: #0076d1 !important;}
 
@@ -1151,6 +1152,7 @@ div.login dl dd input[type=password] {width: 100%;height: 35px;padding: 0;}
 
 div.login div.btn { margin-top: 20px;}
 div.login div.btn input[type=submit] {width: 100%; height: 50px; border: 0;font-size: 18px;}
+div.login div.btn input[type=button] {width: 100%; height: 50px; border: 0;font-size: 18px;}
 }
 
 
@@ -1170,6 +1172,7 @@ div.login dl input[type=password] {width: 295px; height: 35px;line-height: 35px;
 
 div.login div.btn { margin-top: 30px;}
 div.login div.btn input[type=submit] { width: 364px; height: 69px;font-size: 22px;}
+div.login div.btn input[type=button] { width: 364px; height: 69px;font-size: 22px;}
 }
 
 

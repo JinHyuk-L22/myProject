@@ -19,6 +19,8 @@
 
     <script src="{{ asset('vendor/sweetalert\sweetalert.all.js') }}"></script>
 
+    @stack('styles')
+
 </head>
 <body>
 @yield('content')
